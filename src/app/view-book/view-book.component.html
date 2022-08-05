@@ -1,0 +1,24 @@
+<h3>Book Details - {{id}}</h3>
+
+<!-- {{book | json}} -->
+
+
+<div class="row" *ngIf="book">
+    <div class="col-4">
+            <img src="assets/images/{{book.image_url}}" width="100px" height="400px" class="card-img-top" alt="..">
+    </div>
+    <div class="col-8">
+        <div class="card-body">
+            <h5 class="card-title">{{book.title}}</h5>
+            <p class="card-text">Author: {{book.author}} <br/> Price: {{book.price | currency: 'USD'}} <br />
+            Published Year: {{book.publishedYear}} <br /> 
+            ISBN: {{book.isbn}} <br />
+            <span class="badge rounded-pill text-bg-success" *ngIf="book.stock == 'AVAILABLE' ">Available</span>
+            <span class="badge rounded-pill text-bg-danger" *ngIf="book.stock == 'UNAVAILABLE' ">Out of Stock</span>
+
+        </p>
+            <button [disabled]="book.stock == 'UNAVAILABLE'" type="button" class="btn btn-primary" (click)="addToCart(book)">Place Order</button>
+        </div>
+    </div>
+</div>
+ 

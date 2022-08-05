@@ -1,0 +1,34 @@
+Ra{{rating}
+<ng-container *ngIf="rating">
+    <span [ngSwitch]="rating">
+        <span *ngSwitchCase="rating >= 1 && rating < 2">
+            <i class="fa fa-star"></i>
+        </span>
+
+        <span *ngSwitchCase="rating >= 2 && rating < 3">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+        </span>
+
+        <span *ngSwitchCase="rating >= 3 && rating < 4">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+        </span>
+
+        <span *ngSwitchCase="rating >= 4 && rating < 5">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+        </span>
+
+        <span *ngSwitchCase="rating >= 5">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+        </span>
+    </span>
+</ng-container>
